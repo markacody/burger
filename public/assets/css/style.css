@@ -1,0 +1,23 @@
+body {
+    background: goldenrod;
+    font-size: 14px;
+}
+footer {
+    background: maroon;
+    color: goldenrod;
+}
+p {
+    color: black;
+}
+#ordered {
+    background: #DAF7A6;
+}
+#devoured {
+    background: #F8B5A7;
+}
+.order-instructions {
+    color: #333;    
+}
+#burger-parent {
+    
+}

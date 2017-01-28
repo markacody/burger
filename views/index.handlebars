@@ -1,0 +1,48 @@
+<header class='header'>
+<img src="/assets/img/burger.png" alt="It's a burger.">
+<h1>Eat-Da-Burger</h1>
+</header>
+<main class="container">
+    <div id="burger-parent">
+        <div id="ordered">
+            <ul>
+              {{#each burgers}}
+                {{#unless this.devoured}}
+                  <li>
+                    {{this.burger_name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="devoured" value="true">
+                      <button type="submit">Devour it!</button>
+                    </form>
+                  </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+        </div>
+        <div id="devoured">
+            <ul>
+              {{#each burgers}}
+                {{#if this.devoured}}
+                  <li>
+                    {{this.burger_name}}
+                  </li>
+                {{/if}}
+              {{/each}}
+            </ul>
+        </div>
+    </div>
+    <<div id="order-window">
+        <form id="order-form" action="/" method="POST">
+          <div class="form-group">
+            <label for="burger">Name Your Burger</label>
+            <input type="text" id="newburger" name="burger_name">
+          </div>
+          <button type="submit">Order Burger</button>
+          <p class="order-instructions">Enter a burger you want to eat and click Order Burger.</p>
+        </form>
+    </div>
+</main>
+<footer>
+    <p>Burgers never get old!</p>
+</footer>
