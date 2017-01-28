@@ -1,47 +1,60 @@
 <header class='header'>
-<img src="/assets/img/burger.png" alt="It's a burger.">
-<h1>Eat-Da-Burger</h1>
+    <div class="container">
+        <img src="/assets/img/burger.png" alt="It's a burger.">
+        <h1>Eat-Da-Burger</h1>
+    </div>
 </header>
-<main class="container">
-    <div id="burger-parent">
-        <div id="ordered">
-            <ul>
-              {{#each burgers}}
-                {{#unless this.devoured}}
-                  <li>
-                    {{this.burger_name}}
+<main> 
+<div class="container">
+   <div class="row clearfix">
+   
+            <div id="ordered" class="col-sm-6 float-left">
+               <h2>You Ordered It</h2>
+                <ul>
+                  {{#each burgers}}
+                    {{#unless this.devoured}}
+                      <li>
+                        {{this.burger_name}}
 
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
-                      <input type="hidden" name="devoured" value="true">
-                      <button type="submit">Devour it!</button>
-                    </form>
-                  </li>
-                {{/unless}}
-              {{/each}}
-            </ul>
-        </div>
-        <div id="devoured">
-            <ul>
-              {{#each burgers}}
-                {{#if this.devoured}}
-                  <li>
-                    {{this.burger_name}}
-                  </li>
-                {{/if}}
-              {{/each}}
-            </ul>
+                        <form action="/{{this.id}}?_method=PUT" method="POST">
+                         <div class="form-group">
+                              <input class="form-control" type="hidden" name="devoured" value="true">
+                              <button class="btn-danger" type="submit">Devour it!</button>
+                          </div>
+                        </form>
+                      </li>
+                    {{/unless}}
+                  {{/each}}
+                </ul>
+            </div>
+            <div id="devoured" class="col-sm-6 float-right">
+               <h2>You Devoured It</h2>
+                <ul>
+                  {{#each burgers}}
+                    {{#if this.devoured}}
+                      <li>
+                        {{this.burger_name}}
+                      </li>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+            </div>
+        
+    </div>
+    <div id="order-window" class="row">
+        <div class="col-sm-12">
+             <form id="order-form" action="/" method="POST">
+                  <div class="form-group">
+                    <label for="burger_name">Name Your Burger and Click Order</label>
+                    <input type="text" id="newburger" name="burger_name" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <button class="btn-primary form-control" type="submit">Order </button>
+                  </div>
+            </form>
         </div>
     </div>
-    <<div id="order-window">
-        <form id="order-form" action="/" method="POST">
-          <div class="form-group">
-            <label for="burger">Name Your Burger</label>
-            <input type="text" id="newburger" name="burger_name">
-          </div>
-          <button type="submit">Order Burger</button>
-          <p class="order-instructions">Enter a burger you want to eat and click Order Burger.</p>
-        </form>
-    </div>
+</div>
 </main>
 <footer>
     <p>Burgers never get old!</p>

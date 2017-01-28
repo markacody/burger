@@ -1,23 +1,61 @@
-body {
-    background: goldenrod;
-    font-size: 14px;
+header {
+    text-align: center;
+    background-color: bisque;
+}
+main {
+    background-color: mediumseagreen;
+    padding-top: 1em;
+    padding-bottom: 400px;
+}
+div h2 {
+    text-align: center;
 }
 footer {
-    background: maroon;
-    color: goldenrod;
+    background: orange;
+    height: 100%;
+    text-align: center;
 }
-p {
-    color: black;
+footer p {
+    color: gray;
+    font-size: 1.5em;
 }
 #ordered {
     background: #DAF7A6;
+    border-radius: .25em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    padding:.25em;
+    margin: .25em 0 .25em 0;
+}
+#ordered li {
+    font-size: 1.25em;
+    list-style: none; 
 }
 #devoured {
-    background: #F8B5A7;
+    background: mediumseagreen;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    border-radius: .25em;
+    padding:.25em;
+    margin: .25em 0 .25em 0;
+}
+#devoured li {
+    font-size: 1.25em;
+    list-style: none;
+    font-weight: bold;
 }
 .order-instructions {
-    color: #333;    
+    color: #333;
+    font-size: 1.25em;
 }
-#burger-parent {
-    
+
+#order-window {
+    text-align: center;
+    border-radius: .25em;
+    background: silver;
+    padding: .5em;
+    margin-top: .25em;
+    font-size: 1.5em;
 }
