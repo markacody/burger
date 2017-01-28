@@ -18,8 +18,8 @@
 
                         <form action="/{{this.id}}?_method=PUT" method="POST">
                          <div class="form-group">
-                              <input class="form-control" type="hidden" name="devoured" value="true">
-                              <button class="btn-danger" type="submit">Devour it!</button>
+                            <input type="hidden" name="devoured" value="true">
+                            <button class="btn-danger" type="submit">Devour it!</button>
                           </div>
                         </form>
                       </li>
@@ -48,6 +48,7 @@
                     <label for="burger_name">Name Your Burger and Click Order</label>
                     <input type="text" id="newburger" name="burger_name" class="form-control">
                   </div>
+                  <input type="hidden" name="devoured" value="false">
                   <div class="form-group">
                       <button class="btn-primary form-control" type="submit">Order </button>
                   </div>

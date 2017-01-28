@@ -33,7 +33,7 @@ router.put("/:id", function(req, res) {
     console.log("Burger was devoured: ", devoured);
     //NOTE: invoke the function, specify the column and new value in an object literal, then specify the id of the row to be updated with the variable declared and assigned above, devoured. In a callback function redirect to the index whereupon the select all function is run again.
     burger.updateOne({
-        devoured: req.body.devoured
+        devoured: req.body.value
         }, devoured, function() {
     res.redirect("/");
   });
